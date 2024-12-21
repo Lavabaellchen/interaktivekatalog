@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aufnehmen und Mixen in Logic Pro</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #4e73df, #1cc88a);
+            color: #fff;
+            width: 100%;
+            margin: 0;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: auto;
+            background-color: #fff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 0;
+            width: 80%;
+            border-radius: 10px;
+        }
+        .tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            background: #f4f4f4;
+            border-right: 1px solid #ddd;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        .tab:hover {
+            background: #1cc88a;
+            color: #fff;
+        }
+        .tab.active {
+            background: #4e73df;
+            color: #fff;
+            font-weight: bold;
+            border-bottom: 2px solid #fff;
+        }
+        .tab:last-child {
+            border-right: none;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: #fff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 80%;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .subsection {
+            margin: 15px 0;
+            font-weight: bold;
+            color: #555;
+        }
+        .exkurs {
+            background: #eef5f9;
+            border-left: 4px solid #1cc88a;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            color: #333;
+            text-align: left;
+        }
+        ul {
+            margin: 10px 0 20px;
+            padding: 0 20px;
+            list-style: circle;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        @media screen and (max-width: 768px) {
+            .tabs {
+                flex-wrap: wrap;
+            }
+            .tab {
+                flex: none;
+                width: 100%;
+            }
+            .tab-content {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Aufnehmen und Mixen in Logic Pro</h1>
+    <div class="tabs">
+        <div class="tab active" data-tab="einleitung">Einleitung</div>
+        <div class="tab" data-tab="kapitel1">Kapitel 1: Grundlagen</div>
+        <div class="tab" data-tab="kapitel2">Kapitel 2: Workflow</div>
+        <div class="tab" data-tab="kapitel3">Kapitel 3: Mixing</div>
+        <div class="tab" data-tab="kapitel4">Kapitel 4: Fortgeschritten</div>
+        <div class="tab" data-tab="kapitel5">Kapitel 5: Editing</div>
+        <div class="tab" data-tab="kapitel6">Kapitel 6: Mastering</div>
+    </div>
+
+    <div id="einleitung" class="tab-content active">
+        <h2>Einleitung</h2>
+        <p><strong>Warum Logic Pro?</strong><br>Logic Pro ist eine benutzerfreundliche DAW mit einer breiten Palette an Tools.</p>
+        <p><strong>Voraussetzungen:</strong></p>
+        <ul>
+            <li>Hardware: Computer, Audio-Interface, Kopfhörer oder Monitore</li>
+            <li>Software: Logic Pro</li>
+            <li>Know-how: Keine Vorkenntnisse nötig</li>
+        </ul>
+        <p><strong>Ziel:</strong> Professionelle Ergebnisse erzielen, z. B. Song-Mixing, Beat-Erstellung oder Live-Aufnahmen.</p>
+    </div>
+
+    <div id="kapitel1" class="tab-content">
+        <h2>Kapitel 1: Grundlagen</h2>
+        <p><strong>Audio-Interface einrichten:</strong> Verbinde dein Interface mit deinem Computer und wähle es in Logic Pro unter Einstellungen → Audio aus.</p>
+        <p><strong>Logic Pro kennenlernen:</strong> Bedienelemente wie Steuerleiste und Mixer erkunden.</p>
+        <div class="exkurs">
+            <strong>Exkurs: Mikrofonierung</strong>
+            <ul>
+                <li><strong>Gitarre:</strong> 15–20 cm Abstand vom Schallloch.</li>
+                <li><strong>Gesang:</strong> 15–30 cm Abstand, Pop-Filter nutzen.</li>
+                <li><strong>Percussion:</strong> Mikrofon 5–10 cm über der Trommel platzieren.</li>
+            </ul>
+        </div>
+        <p>Drücke die R-Taste, um die Aufnahme zu starten.</p>
+    </div>
+
+    <div id="kapitel2" class="tab-content">
+        <h2>Kapitel 2: Workflow</h2>
+        <p><strong>Spuren organisieren:</strong> Benenne Spuren und nutze Farbcodierung (z. B. Rot für Rhythmus, Blau für Harmonie).</p>
+        <p><strong>Marker setzen:</strong> Drücke "Shift + K", um Marker einzufügen.</p>
+        <p><strong>Templates:</strong> Projekte als Vorlage speichern für effizientes Arbeiten.</p>
+    </div>
+
+    <div id="kapitel3" class="tab-content">
+        <h2>Kapitel 3: Mixing</h2>
+        <p><strong>Mixer öffnen:</strong> Drücke "X".</p>
+        <p><strong>EQ anwenden:</strong> Filtere Frequenzen mit High- und Low-Cut-Filtern.</p>
+        <p><strong>Kompression:</strong> Halte Pegel gleichmäßig durch Anpassung von Threshold, Ratio und Attack.</p>
+        <div class="exkurs">
+            <strong>Exkurs: Panning</strong> Elemente im Stereo-Feld platzieren (z. B. Hi-Hat nach rechts, Gitarre nach links).
+        </div>
+    </div>
+
+    <div id="kapitel4" class="tab-content">
+        <h2>Kapitel 4: Fortgeschrittenes Mixing</h2>
+        <p><strong>Automatisierung:</strong> Aktiviere Automationsmodus mit "A".</p>
+        <p><strong>Sidechain-Kompression:</strong> Nutze Sidechain, um Signale gezielt abzusenken.</p>
+        <p><strong>Stereobreite:</strong> Plugins wie "Stereo Spread" verwenden.</p>
+    </div>
+
+    <div id="kapitel5" class="tab-content">
+        <h2>Kapitel 5: Editing</h2>
+        <p><strong>Flex-Time aktivieren:</strong> Timingfehler mit Flex-Modus korrigieren.</p>
+        <p><strong>Flex-Pitch:</strong> Tonhöhenkorrektur durch Ziehen von Pitch-Knoten.</p>
+        <p><strong>Drums quantisieren:</strong> "Rhythmic"-Modus für Timingkorrekturen nutzen.</p>
+    </div>
+
+    <div id="kapitel6" class="tab-content">
+        <h2>Kapitel 6: Mastering</h2>
+        <p><strong>Pegelstandards:</strong> Halte dich an -14 LUFS.</p>
+        <p><strong>Limiter:</strong> Setze Output-Pegel auf -1 dB.</p>
+        <p><strong>Referenzieren:</strong> Vergleiche deinen Mix mit professionellen Produktionen.</p>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
